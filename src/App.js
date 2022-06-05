@@ -6,23 +6,21 @@ import GlobalContext from "./context/GlobalState";
 
 function App() {
   const [data, setData] = useState([]);
+
+  localStorage.setItem("data", JSON.stringify(data));
+  const localData = localStorage.getItem("data");
+  useEffect(() => {
+    if (localData) {
+      setData((data = JSON.parse(localData)));
+    }
+  });
+
   const saveEnteredData = (enteredData) => {
     setData((prevExpenses) => {
       return [enteredData, ...prevExpenses];
     });
-    
-    localStorage.setItem("data", JSON.stringify(data));
   };
 
-  
-
-    const localData = localStorage.getItem("data");
-
-    const localOrNot = () => {
-      return localData ? (data = JSON.parse(localData)) : data;
-    };
-
-  
   let totalIncome = 0;
   data.forEach((item) => {
     if (item.sign === "+") {
