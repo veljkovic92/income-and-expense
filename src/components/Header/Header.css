@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  background-image: url("../../images/calculator.jpg");
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+}
+
+.header__container {
+  width: 30%;
+}
+
+.headerMain {
+  font-size: 2.4rem;
+}

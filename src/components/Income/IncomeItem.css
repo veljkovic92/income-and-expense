@@ -1,0 +1,14 @@
+.item__hidden-btn {
+  border-radius: 5px;
+  padding: 0.8rem;
+  border-style: none;
+  background-color: red;
+  cursor: pointer;
+
+  transition: all 0.2s;
+}
+
+.item__hidden-btn:hover {
+  transform: scale(105%);
+  box-shadow: 1px 1px 4px 1px black;
+}

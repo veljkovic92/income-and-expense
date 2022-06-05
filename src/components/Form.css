@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgb(226, 226, 226);
+  border: 1px solid darkgrey;
+}
+
+.form__select {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.form__input {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.form__input--desc {
+  width: 30%;
+}
+
+.form__input--desc:focus::placeholder {
+  color: transparent;
+}
+
+.form__input--value {
+  width: 10%;
+}
+
+.form__input--value:focus::placeholder {
+  color: transparent;
+}
+
+.form__button {
+  border-radius: 50%;
+  padding: 0.5rem;
+  border-style: none;
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.form__button--plus {
+  background-color: green;
+}
+
+.form__button--minus {
+  background-color: red;
+}

@@ -1,0 +1,10 @@
+.expense-sum {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0.5rem 2rem;
+  margin: 1rem 0;
+
+  background-color: rgb(255, 72, 0);
+}
