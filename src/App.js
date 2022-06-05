@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import Form from "./components/Form";
 import TotalList from "./components/List/TotalList";
@@ -10,8 +10,19 @@ function App() {
     setData((prevExpenses) => {
       return [enteredData, ...prevExpenses];
     });
+    
+    localStorage.setItem("data", JSON.stringify(data));
   };
 
+  
+
+    const localData = localStorage.getItem("data");
+
+    const localOrNot = () => {
+      return localData ? (data = JSON.parse(localData)) : data;
+    };
+
+  
   let totalIncome = 0;
   data.forEach((item) => {
     if (item.sign === "+") {

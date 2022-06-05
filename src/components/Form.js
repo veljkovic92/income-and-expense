@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react/cjs/react.production.min";
 import "./Form.css";
 
 const Form = (props) => {
@@ -19,7 +20,7 @@ const Form = (props) => {
   };
 
   const submitHandler = (event) => {
-    const uniqueKey = Math.random() * 1;
+    const uniqueKey = Math.random();
 
     event.preventDefault();
 
