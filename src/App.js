@@ -14,7 +14,11 @@ function App() {
 
   const saveEnteredData = (enteredData) => {
     setData((prevExpenses) => {
-      return [enteredData, ...prevExpenses];
+      if (localData) {
+        return [enteredData, ...localData];
+      } else {
+        return [enteredData, ...prevExpenses];
+      }
     });
   };
 
