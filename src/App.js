@@ -7,18 +7,9 @@ import GlobalContext from "./context/GlobalState";
 function App() {
   const [data, setData] = useState([]);
 
-  const localData = localStorage.getItem("data");
-  useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(data));
-  }, [data]);
-
   const saveEnteredData = (enteredData) => {
     setData((prevExpenses) => {
-      if (localData) {
-        return [enteredData, ...localData];
-      } else {
-        return [enteredData, ...prevExpenses];
-      }
+      return [enteredData, ...prevExpenses];
     });
   };
 
