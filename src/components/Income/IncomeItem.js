@@ -9,14 +9,17 @@ const IncomeItem = (props) => {
     props.chosenId(id);
   };
 
+  const capitalizedTitle =
+    props.title.charAt(0).toUpperCase() + props.title.slice(1);
+
   if (props.sign === "+") {
     return (
-      <li
+      <div
         className="item"
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
       >
-        <p className="item__description">{props.title}</p>
+        <p className="item__description">{capitalizedTitle}</p>
         {isShown === false && (
           <p className="item__value">
             {props.sign}
@@ -28,7 +31,7 @@ const IncomeItem = (props) => {
             <i className="fa fa-solid fa-ban fa-2x"></i>
           </button>
         )}
-      </li>
+      </div>
     );
   }
 };

@@ -5,6 +5,7 @@ import IncomeList from "./IncomeList";
 import "./TotalList.css";
 
 const TotalList = (props) => {
+  
   const chosenId = (event) => {
     props.chosenId(event);
   };

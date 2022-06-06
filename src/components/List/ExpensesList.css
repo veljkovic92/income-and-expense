@@ -1,4 +1,4 @@
-ul {
+.expense-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -6,6 +6,9 @@ ul {
 }
 
 .expense-list__header {
-  text-align: center;
   color: rgb(255, 72, 0);
+}
+
+.expense-list__item {
+  margin-bottom: -5rem;
 }

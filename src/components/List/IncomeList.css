@@ -1,11 +1,11 @@
-ul {
+.income-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-h2 {
+.income-list__header {
+  color: rgb(0, 89, 255);
   text-align: center;
 }
-

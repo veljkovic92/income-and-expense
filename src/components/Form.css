@@ -10,11 +10,14 @@
 .form__select {
   padding: 0.5rem;
   margin-right: 0.5rem;
+  border-radius: 3px;
 }
 
 .form__input {
   padding: 0.5rem;
   margin-right: 0.5rem;
+  border-radius: 3px;
+  border: 1px solid grey;
 }
 
 .form__input--desc {

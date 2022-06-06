@@ -15,15 +15,18 @@ const ExpenseItem = (props) => {
     return (Math.abs(props.amount / total.totalExpense) * 100).toFixed();
   };
 
+  const capitalizedTitle =
+    props.title.charAt(0).toUpperCase() + props.title.slice(1);
+
   if (props.sign === "-") {
     return (
-      <li
+      <div
         className="item"
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
       >
         <div>
-          <p className="item__description">{props.title}</p>
+          <p className="item__description">{capitalizedTitle}</p>
         </div>
         <div className="item__right">
           {isShown === false && (
@@ -41,7 +44,7 @@ const ExpenseItem = (props) => {
             <div className="item__percentage">{calculatePercentage()}%</div>
           )}
         </div>
-      </li>
+      </div>
     );
   }
 };

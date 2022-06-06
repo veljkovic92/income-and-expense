@@ -10,12 +10,12 @@ const IncomeList = (props) => {
     props.chosenId(event);
   };
   if (props.items.length === 0) {
-    return <h2 className="expense-list__header">Found no incomes</h2>;
+    return <h2>Found no income</h2>;
   }
   return (
-    <div>
-      <h2>Incomes</h2>
-      <ul>
+    <div className="income-list">
+      <h2 className="income-list__header">Income</h2>
+      <div>
         {props.items.map((income) => (
           <IncomeItem
             key={income.id}
@@ -26,7 +26,7 @@ const IncomeList = (props) => {
             chosenId={chosenId}
           />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

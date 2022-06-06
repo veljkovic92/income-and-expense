@@ -7,7 +7,17 @@ import GlobalContext from "./context/GlobalState";
 function App() {
   const [data, setData] = useState([]);
 
+  useEffect(() => {
+    let totalList = [];
+    const listOfExpenses = JSON.parse(localStorage.getItem("listOfExpenses"));
+    const listOfIncomes = JSON.parse(localStorage.getItem("listOfIncomes"));
+    if (listOfExpenses) totalList = [...totalList, ...listOfExpenses];
+    if (listOfIncomes) totalList = [...totalList, ...listOfIncomes];
+    setData(totalList);
+  }, []);
+
   const saveEnteredData = (enteredData) => {
+    localStorage.setItem("data", JSON.stringify(enteredData));
     setData((prevExpenses) => {
       return [enteredData, ...prevExpenses];
     });
@@ -28,6 +38,8 @@ function App() {
 
   const chosenId = (event) => {
     const clickedId = event;
+    let expensesItems = JSON.parse(localStorage.getItem("listOfExpenses"));
+    let incomesItems = JSON.parse(localStorage.getItem("listOfIncomes"));
 
     for (var i = 0; i < data.length; i++) {
       if (data[i].id === clickedId) {
@@ -35,6 +47,23 @@ function App() {
         i--;
       }
     }
+
+    for (let i = 0; i < expensesItems.length; i++) {
+      if (expensesItems[i].id === clickedId) {
+        expensesItems.splice(i, 1);
+      }
+    }
+    expensesItems = JSON.stringify(expensesItems);
+    localStorage.setItem("listOfExpenses", expensesItems);
+
+    for (let i = 0; i < incomesItems.length; i++) {
+      if (incomesItems[i].id === clickedId) {
+        incomesItems.splice(i, 1);
+      }
+    }
+    incomesItems = JSON.stringify(incomesItems);
+    localStorage.setItem("listOfIncomes", incomesItems);
+
     setData(() => {
       return [...data];
     });

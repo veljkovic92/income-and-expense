@@ -2,6 +2,13 @@ import { useState } from "react";
 import { useEffect } from "react/cjs/react.production.min";
 import "./Form.css";
 
+function updateLocalStorage(enteredData, key) {
+  let list = JSON.parse(localStorage.getItem(key));
+  list ? list.push(enteredData) : (list = [enteredData]);
+
+  localStorage.setItem(key, JSON.stringify(list));
+}
+
 const Form = (props) => {
   const [enteredSign, setEnteredSign] = useState("-");
   const [enteredDesc, setEnteredDesc] = useState("");
@@ -31,6 +38,10 @@ const Form = (props) => {
       desc: enteredDesc,
       value: +enteredValue,
     };
+
+    enteredData.sign === "-"
+      ? updateLocalStorage(enteredData, "listOfExpenses")
+      : updateLocalStorage(enteredData, "listOfIncomes");
 
     props.onSaveEnteredData(enteredData);
 
