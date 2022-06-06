@@ -11,7 +11,7 @@ const TotalList = (props) => {
   return (
     <div className="total-list">
       <IncomeList items={props.items} chosenId={chosenId} />
-      <ExpensesList items={props.items} />
+      <ExpensesList items={props.items} chosenId={chosenId} />
     </div>
   );
 };
