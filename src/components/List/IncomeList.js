@@ -10,7 +10,7 @@ const IncomeList = (props) => {
     props.chosenId(event);
   };
   if (props.items.length === 0) {
-    return <h2 className="expense-list__fallback">Found no incomes</h2>;
+    return <h2 className="expense-list__header">Found no incomes</h2>;
   }
   return (
     <div>

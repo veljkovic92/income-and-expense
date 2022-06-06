@@ -22,19 +22,25 @@ const ExpenseItem = (props) => {
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
       >
-        <p className="item__description">{props.title}</p>
-        {isShown === false && (
-          <p className="item__value">
-            {props.sign}
-            {props.amount}
-          </p>
-        )}
-        
-        {isShown ? (
-          <button className="item__hidden-btn" onClick={onClickHandler}>
-            <i className="fa fa-solid fa-ban fa-2x"></i>
-          </button>
-        ) : <div className="percentage">{calculatePercentage()}%</div>}
+        <div>
+          <p className="item__description">{props.title}</p>
+        </div>
+        <div className="item__right">
+          {isShown === false && (
+            <p className="item__value">
+              {props.sign}
+              {props.amount}
+            </p>
+          )}
+
+          {isShown ? (
+            <button className="item__hidden-btn" onClick={onClickHandler}>
+              <i className="fa fa-solid fa-ban fa-2x"></i>
+            </button>
+          ) : (
+            <div className="item__percentage">{calculatePercentage()}%</div>
+          )}
+        </div>
       </li>
     );
   }

@@ -11,7 +11,7 @@ const ExpensesList = (props) => {
   }
   return (
     <div>
-      <h2>Expenses</h2>
+      <h2 className="expense-list__header">Expenses</h2>
       <ul>
         {props.items.map((expense) => (
           <ExpenseItem
