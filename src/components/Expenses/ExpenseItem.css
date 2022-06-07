@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   width: 20rem;
+  height: 4rem;
   padding: 0.5rem 1rem;
   border: 1px rgb(196, 195, 195);
   border-style: ridge none;
@@ -37,6 +38,6 @@
   padding: 0.5rem;
   font-size: 70%;
   width: 2.5rem;
-  height: 2.5rem;
+  height: 2rem;
   text-align: center;
 }

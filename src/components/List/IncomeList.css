@@ -1,11 +1,13 @@
-.income-list {
+.income-list__header {
+  color: rgb(0, 89, 255);
+  text-align: left;
+}
+
+.income-list__items {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.income-list__header {
-  color: rgb(0, 89, 255);
-  text-align: center;
-}
+

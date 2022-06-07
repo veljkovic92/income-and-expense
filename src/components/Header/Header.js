@@ -7,7 +7,9 @@ const Header = (props) => {
   const totalSum = props.sumIncome + props.sumExpense;
   const otherThanNull = () => {
     if (totalSum !== 0) {
-      return totalSum.toFixed(2);
+      return totalSum.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+      });
     } else {
       return totalSum;
     }
@@ -26,12 +28,6 @@ const Header = (props) => {
     <div className="header">
       <div className="header__container">
         <p>Available budget in {date}:</p>
-
-        {/* {totalSum > 0 ? (
-          <h1 className="headerMain">+{otherThanNull()}</h1>
-        ) : (
-          <h1 className="headerMain">{totalSum}</h1>
-        )} */}
 
         <h1 className="headerMain">{header()}</h1>
         <IncomeSum sumIncome={props.sumIncome} />

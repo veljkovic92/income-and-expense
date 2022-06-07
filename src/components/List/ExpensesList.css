@@ -1,14 +1,14 @@
-.expense-list {
+.expense-list__header {
+  color: rgb(255, 72, 0);
+}
+
+.expense-list__items {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.expense-list__header {
-  color: rgb(255, 72, 0);
-}
 
-.expense-list__item {
-  margin-bottom: -5rem;
-}
+
+

@@ -13,9 +13,9 @@ const IncomeList = (props) => {
     return <h2>Found no income</h2>;
   }
   return (
-    <div className="income-list">
+    <div>
       <h2 className="income-list__header">Income</h2>
-      <div>
+      <div className="income-list__items">
         {props.items.map((income) => (
           <IncomeItem
             key={income.id}

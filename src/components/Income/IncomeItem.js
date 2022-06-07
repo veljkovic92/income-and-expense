@@ -23,7 +23,9 @@ const IncomeItem = (props) => {
         {isShown === false && (
           <p className="item__value">
             {props.sign}
-            {props.amount}
+            {props.amount.toLocaleString("en-US", {
+              minimumFractionDigits: 2,
+            })}
           </p>
         )}
         {isShown && (

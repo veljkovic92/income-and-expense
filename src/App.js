@@ -71,9 +71,14 @@ function App() {
 
   return (
     <div>
-      <Header sumIncome={totalIncome} sumExpense={totalExpense} />
-      <Form onSaveEnteredData={saveEnteredData} />
       <GlobalContext.Provider value={{ totalIncome, totalExpense }}>
+        <Header
+          sumIncome={totalIncome}
+          sumExpense={totalExpense}
+          value={{ totalIncome, totalExpense }}
+        />
+        <Form onSaveEnteredData={saveEnteredData} />
+
         <TotalList
           items={data}
           value={{ totalIncome, totalExpense }}

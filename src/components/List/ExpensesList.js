@@ -10,9 +10,9 @@ const ExpensesList = (props) => {
     return <h2 className="expense-list__fallback">Found no expenses</h2>;
   }
   return (
-    <div className="expense-list">
+    <div>
       <h2 className="expense-list__header">Expenses</h2>
-      <div>
+      <div className="expense-list__items">
         {props.items.map((expense) => (
           <ExpenseItem
             key={expense.id}
