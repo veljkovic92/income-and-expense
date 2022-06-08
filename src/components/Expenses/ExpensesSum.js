@@ -2,7 +2,7 @@ import "./ExpenseSum.css";
 import { useContext } from "react";
 import GlobalContext from "../../context/GlobalState";
 
-const ExpensesSum = (props) => {
+const ExpensesSum = () => {
   const context = useContext(GlobalContext);
 
   const calculatePercentage = () => {

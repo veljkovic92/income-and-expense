@@ -5,7 +5,7 @@ import { date } from "../Date";
 import { useContext } from "react";
 import GlobalContext from "../../context/GlobalState";
 
-const Header = (props) => {
+const Header = () => {
   const context = useContext(GlobalContext);
   const totalSum = context.totalIncome + context.totalExpense;
   const otherThanNull = () => {

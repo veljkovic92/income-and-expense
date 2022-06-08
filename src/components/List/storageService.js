@@ -1,5 +1,0 @@
-class StorageService {
-  setIncomeList() {
-    localStorage;
-  }
-}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
-import Form from "./components/Form";
+import Form from "./components/InputForm/Form";
 import TotalList from "./components/List/TotalList";
 import GlobalContext from "./context/GlobalState";
 
@@ -72,16 +72,9 @@ function App() {
   return (
     <div>
       <GlobalContext.Provider value={{ totalIncome, totalExpense }}>
-        <Header          
-          value={{ totalIncome, totalExpense }}
-        />
+        <Header />
         <Form onSaveEnteredData={saveEnteredData} />
-
-        <TotalList
-          items={data}
-          value={{ totalIncome, totalExpense }}
-          chosenId={chosenId}
-        />
+        <TotalList items={data} chosenId={chosenId} />
       </GlobalContext.Provider>
     </div>
   );

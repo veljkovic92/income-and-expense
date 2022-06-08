@@ -1,4 +1,3 @@
-
 import ExpensesList from "./ExpensesList";
 import IncomeList from "./IncomeList";
 import "./TotalList.css";

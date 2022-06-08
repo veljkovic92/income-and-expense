@@ -1,7 +1,7 @@
 import "./IncomeSum.css";
 import { useContext } from "react";
 import GlobalContext from "../../context/GlobalState";
-const IncomeSum = (props) => {
+const IncomeSum = () => {
   const context = useContext(GlobalContext);
 
   return (
