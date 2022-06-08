@@ -9,11 +9,11 @@ const IncomeList = (props) => {
   const chosenId = (event) => {
     props.chosenId(event);
   };
-  if (props.items.length === 0) {
-    return <h2>Found no income</h2>;
+  if (context.totalIncome === 0) {
+    return <h2 className="income-list__alert">Found no income</h2>;
   }
   return (
-    <div>
+    <div className="income-list">
       <h2 className="income-list__header">Income</h2>
       <div className="income-list__items">
         {props.items.map((income) => (

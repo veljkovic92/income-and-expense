@@ -2,9 +2,12 @@ import IncomeSum from "../Income/IncomeSum";
 import ExpensesSum from "../Expenses/ExpensesSum";
 import "./Header.css";
 import { date } from "../Date";
+import { useContext } from "react";
+import GlobalContext from "../../context/GlobalState";
 
 const Header = (props) => {
-  const totalSum = props.sumIncome + props.sumExpense;
+  const context = useContext(GlobalContext);
+  const totalSum = context.totalIncome + context.totalExpense;
   const otherThanNull = () => {
     if (totalSum !== 0) {
       return totalSum.toLocaleString("en-US", {
@@ -30,8 +33,8 @@ const Header = (props) => {
         <p>Available budget in {date}:</p>
 
         <h1 className="headerMain">{header()}</h1>
-        <IncomeSum sumIncome={props.sumIncome} />
-        <ExpensesSum sumExpense={props.sumExpense} />
+        <IncomeSum />
+        <ExpensesSum />
       </div>
     </div>
   );

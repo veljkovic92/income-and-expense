@@ -1,3 +1,36 @@
+.income-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30vw;
+  height: 4rem;
+  padding: 0.5rem 1rem;
+  border: 1px rgb(196, 195, 195);
+  border-style: ridge none;
+  background-color: white;
+}
+
+.income-item:nth-child(even) {
+  background-color: rgb(240, 239, 239);
+  border: none;
+}
+
+.income-item__description {
+  color: rgb(72, 131, 33);
+}
+.income-item__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.income-item__value {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 120%;
+  color: rgb(0, 89, 255);
+}
+
 .item__hidden-btn {
   border-radius: 3px;
   padding: 0.8rem;

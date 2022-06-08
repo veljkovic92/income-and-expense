@@ -1,5 +1,17 @@
+.income-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.income-list__alert {
+  color: rgb(0, 89, 255);
+  font-weight: 100;
+}
+
 .income-list__header {
   color: rgb(0, 89, 255);
+  font-weight: 200;
+  font-size: 1.3rem;
   text-align: left;
 }
 
@@ -10,4 +22,6 @@
   align-items: center;
 }
 
-
+.income-list__items:last-child {
+  border-bottom: 1px solid rgb(196, 195, 195);
+}

@@ -1,23 +1,18 @@
 import "./IncomeSum.css";
-
+import { useContext } from "react";
+import GlobalContext from "../../context/GlobalState";
 const IncomeSum = (props) => {
-  // const otherThanNull = () => {
-  //   if (props.sumIncome !== 0) {
-  //     return {};
-  //   } else {
-  //     return props.sumIncome;
-  //   }
-  // };
+  const context = useContext(GlobalContext);
 
   return (
     <div className="income-sum">
-      <p>Income</p>
-      {props.sumIncome === 0 ? (
-        <p>{props.sumIncome}</p>
+      <p className="income-sum__header">Income</p>
+      {context.totalIncome === 0 ? (
+        <p className="income-sum__value">{context.totalIncome}</p>
       ) : (
-        <p>
+        <p className="income-sum__value">
           +
-          {props.sumIncome.toLocaleString("en-US", {
+          {context.totalIncome.toLocaleString("en-US", {
             minimumFractionDigits: 2,
           })}
         </p>

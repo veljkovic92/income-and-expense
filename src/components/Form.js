@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useEffect } from "react/cjs/react.production.min";
 import "./Form.css";
 
 function updateLocalStorage(enteredData, key) {
@@ -28,25 +27,27 @@ const Form = (props) => {
 
   const submitHandler = (event) => {
     const uniqueKey = Math.random();
-
     event.preventDefault();
+    if (!enteredDesc || !enteredValue || enteredValue < 1) {
+      alert("Please add description and value not lower than 1");
+    } else {
+      const enteredData = {
+        key: uniqueKey,
+        id: uniqueKey,
+        sign: enteredSign,
+        desc: enteredDesc,
+        value: +enteredValue,
+      };
 
-    const enteredData = {
-      key: uniqueKey,
-      id: uniqueKey,
-      sign: enteredSign,
-      desc: enteredDesc,
-      value: +enteredValue,
-    };
+      enteredData.sign === "-"
+        ? updateLocalStorage(enteredData, "listOfExpenses")
+        : updateLocalStorage(enteredData, "listOfIncomes");
 
-    enteredData.sign === "-"
-      ? updateLocalStorage(enteredData, "listOfExpenses")
-      : updateLocalStorage(enteredData, "listOfIncomes");
+      props.onSaveEnteredData(enteredData);
 
-    props.onSaveEnteredData(enteredData);
-
-    setEnteredDesc("");
-    setEnteredValue("");
+      setEnteredDesc("");
+      setEnteredValue("");
+    }
   };
 
   return (

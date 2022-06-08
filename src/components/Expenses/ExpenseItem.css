@@ -1,8 +1,8 @@
-.item {
+.expense-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 20rem;
+  width: 30vw;
   height: 4rem;
   padding: 0.5rem 1rem;
   border: 1px rgb(196, 195, 195);
@@ -10,34 +10,40 @@
   background-color: white;
 }
 
-.item:nth-child(even) {
+.expense-item:nth-child(even) {
   background-color: rgb(240, 239, 239);
   border: none;
 }
 
-.item:last-child {
-  border-bottom: 1px rgb(196, 195, 195);
+.expense-item__description {
+  color: rgb(72, 131, 33);
 }
-
-.item__right {
+.expense-item__right {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.item__value {
+.expense-item__value {
   display: inline-block;
   margin-right: 1rem;
   font-size: 120%;
+  color: rgb(255, 72, 0);
 }
 
-.item__percentage {
+.item__item-percentage {
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   background-color: rgb(255, 159, 16);
   padding: 0.5rem;
   font-size: 70%;
   width: 2.5rem;
   height: 2rem;
-  text-align: center;
+}
+
+.item__item-percentage--hidden {
+  display: none;
 }

@@ -15,13 +15,13 @@ const IncomeItem = (props) => {
   if (props.sign === "+") {
     return (
       <div
-        className="item"
+        className="income-item"
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
       >
-        <p className="item__description">{capitalizedTitle}</p>
+        <p className="income-item__description">{capitalizedTitle}</p>
         {isShown === false && (
-          <p className="item__value">
+          <p className="income-item__value">
             {props.sign}
             {props.amount.toLocaleString("en-US", {
               minimumFractionDigits: 2,

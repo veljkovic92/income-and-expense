@@ -72,9 +72,7 @@ function App() {
   return (
     <div>
       <GlobalContext.Provider value={{ totalIncome, totalExpense }}>
-        <Header
-          sumIncome={totalIncome}
-          sumExpense={totalExpense}
+        <Header          
           value={{ totalIncome, totalExpense }}
         />
         <Form onSaveEnteredData={saveEnteredData} />

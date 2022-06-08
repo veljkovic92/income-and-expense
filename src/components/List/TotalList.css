@@ -1,6 +1,6 @@
 .total-list {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 10rem;
+  padding: 5% 15%;
   background-color: white;
 }

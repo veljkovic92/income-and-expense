@@ -12,7 +12,7 @@ const ExpenseItem = (props) => {
   };
 
   const calculatePercentage = () => {
-    return (Math.abs(props.amount / total.totalExpense) * 100).toFixed();
+    return (Math.abs(props.amount / total.totalIncome) * 100).toFixed();
   };
 
   const capitalizedTitle =
@@ -21,16 +21,16 @@ const ExpenseItem = (props) => {
   if (props.sign === "-") {
     return (
       <div
-        className="item"
+        className="expense-item"
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
       >
         <div>
-          <p className="item__description">{capitalizedTitle}</p>
+          <p className="expense-item__description">{capitalizedTitle}</p>
         </div>
-        <div className="item__right">
+        <div className="expense-item__right">
           {isShown === false && (
-            <p className="item__value">
+            <p className="expense-item__value">
               {props.sign}
               {props.amount.toLocaleString("en-US", {
                 minimumFractionDigits: 2,
@@ -43,7 +43,15 @@ const ExpenseItem = (props) => {
               <i className="fa fa-solid fa-ban fa-2x"></i>
             </button>
           ) : (
-            <div className="item__percentage">{calculatePercentage()}%</div>
+            <div
+              className={
+                total.totalIncome
+                  ? "item__item-percentage"
+                  : "item__item-percentage--hidden"
+              }
+            >
+              {calculatePercentage()}%
+            </div>
           )}
         </div>
       </div>
