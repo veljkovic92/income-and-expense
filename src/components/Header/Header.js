@@ -1,7 +1,7 @@
 import IncomeSum from "../Income/IncomeSum";
 import ExpensesSum from "../Expenses/ExpensesSum";
 import "./Header.css";
-import { date } from "../Date";
+import { date } from "../../utility/Date";
 import { useContext } from "react";
 import GlobalContext from "../../context/GlobalState";
 

@@ -8,8 +8,8 @@ const TotalList = (props) => {
   };
   return (
     <div className="total-list">
-      <IncomeList items={props.items} chosenId={chosenId} />
-      <ExpensesList items={props.items} chosenId={chosenId} />
+      <IncomeList chosenId={chosenId} />
+      <ExpensesList chosenId={chosenId} />
     </div>
   );
 };

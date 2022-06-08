@@ -16,7 +16,7 @@ const ExpensesList = (props) => {
     <div className="expense-list">
       <h2 className="expense-list__header">Expenses</h2>
       <div className="expense-list__items">
-        {props.items.map((expense) => (
+        {context.data.map((expense) => (
           <ExpenseItem
             key={expense.id}
             id={expense.id}

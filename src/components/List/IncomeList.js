@@ -16,7 +16,7 @@ const IncomeList = (props) => {
     <div className="income-list">
       <h2 className="income-list__header">Income</h2>
       <div className="income-list__items">
-        {props.items.map((income) => (
+        {context.data.map((income) => (
           <IncomeItem
             key={income.id}
             id={income.id}

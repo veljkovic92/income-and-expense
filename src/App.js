@@ -70,13 +70,11 @@ function App() {
   };
 
   return (
-    <div>
-      <GlobalContext.Provider value={{ totalIncome, totalExpense }}>
-        <Header />
-        <Form onSaveEnteredData={saveEnteredData} />
-        <TotalList items={data} chosenId={chosenId} />
-      </GlobalContext.Provider>
-    </div>
+    <GlobalContext.Provider value={{ totalIncome, totalExpense, data }}>
+      <Header />
+      <Form onSaveEnteredData={saveEnteredData} />
+      <TotalList chosenId={chosenId} />
+    </GlobalContext.Provider>
   );
 }
 
